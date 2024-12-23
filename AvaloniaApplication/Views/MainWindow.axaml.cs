@@ -1,3 +1,4 @@
+using System;
 using Avalonia.Controls;
 using Avalonia.Input;
 
@@ -13,7 +14,15 @@ public partial class MainWindow : Window
     private void OnPointerPressed(object sender, PointerPressedEventArgs e)
     {
         CustomControl? customControl = this.Find<CustomControl>("MyCustomControl");
-        customControl?.Click((int)e.GetPosition(customControl).X, (int)e.GetPosition(customControl).Y);
+        var point = e.GetCurrentPoint(this);
+        if (point.Properties.IsLeftButtonPressed)
+        {
+            customControl?.Click((int)e.GetPosition(customControl).X, (int)e.GetPosition(customControl).Y);
+        }
+        else
+        {
+            customControl?.Delete((int)e.GetPosition(customControl).X, (int)e.GetPosition(customControl).Y);
+        }
     }
 
     private void OnPointerMoved(object? sender, PointerEventArgs e)

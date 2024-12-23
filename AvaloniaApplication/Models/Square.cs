@@ -8,7 +8,7 @@ public class Square : Shape
 {
     private Point A, B, C, D;
     private static float r1 = r / (float)Math.Sqrt(2);
-    public Square(int x, int y, Color color) : base(x, y, color)
+    public Square(int x, int y) : base(x, y)
     {
     }
 

@@ -7,7 +7,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8520fa7d-d596-42ec-a2cf-f01c76ae8cd0" name="Changes" comment="" />
+    <list default="true" id="8520fa7d-d596-42ec-a2cf-f01c76ae8cd0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AvaloniaApplication/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AvaloniaApplication/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/CustomControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/CustomControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/Models/Circle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/Models/Circle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/Models/Shape.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/Models/Shape.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/Models/Square.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/Models/Square.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/Models/Triangle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/Models/Triangle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/Views/MainWindow.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/Views/MainWindow.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.exe" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/Avalonia/AvaloniaApplication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/Avalonia/AvaloniaApplication.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/Avalonia/AvaloniaApplication.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/Avalonia/AvaloniaApplication.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/AvaloniaApplication.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/AvaloniaApplication.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/AvaloniaApplication.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/AvaloniaApplication.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/AvaloniaApplication.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/AvaloniaApplication.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/AvaloniaApplication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/AvaloniaApplication.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/AvaloniaApplication.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/AvaloniaApplication.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/ref/AvaloniaApplication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/ref/AvaloniaApplication.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/refint/Avalonia/AvaloniaApplication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/refint/Avalonia/AvaloniaApplication.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/refint/AvaloniaApplication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/refint/AvaloniaApplication.dll" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,14 +45,14 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/243a037ca7a04510a506adfdd94befbac90930/a1/46b6da2f/Void.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AvaloniaApplication/ViewLocator.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 1
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2qaYeDodFZsg2B4xF3yTlKOaxOk" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -78,7 +100,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1734902247380</updated>
-      <workItem from="1734902248563" duration="6641000" />
+      <workItem from="1734902248563" duration="6744000" />
+      <workItem from="1734947751439" duration="6295000" />
     </task>
     <servers />
   </component>
