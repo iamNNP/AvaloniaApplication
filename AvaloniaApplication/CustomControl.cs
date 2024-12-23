@@ -76,11 +76,20 @@ public class CustomControl : UserControl
     
     public void Delete(int x0, int y0)
     {
-        foreach (var shape in _shapes.Where(shape => shape.IsInside(x0, y0)).ToList())
-        {
-            _shapes.Remove(shape);
-        }
+        // foreach (var shape in _shapes.Where(shape => shape.IsInside(x0, y0)).ToList())
+        // {
+        //     _shapes.Remove(shape);
+        // }
 
+        for (int i = _shapes.Count() - 1; i >= 0; i--)
+        {
+            if (_shapes[i].IsInside(x0, y0))
+            {
+                _shapes.Remove(_shapes[i]);
+                break;
+            }
+        }
+        
         InvalidateVisual();
     }
 }

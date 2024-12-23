@@ -10,25 +10,6 @@
     <list default="true" id="8520fa7d-d596-42ec-a2cf-f01c76ae8cd0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AvaloniaApplication/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AvaloniaApplication/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AvaloniaApplication/CustomControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/CustomControl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/Models/Circle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/Models/Circle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/Models/Shape.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/Models/Shape.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/Models/Square.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/Models/Square.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/Models/Triangle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/Models/Triangle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/Views/MainWindow.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/Views/MainWindow.axaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.exe" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/Avalonia/AvaloniaApplication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/Avalonia/AvaloniaApplication.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/Avalonia/AvaloniaApplication.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/Avalonia/AvaloniaApplication.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/AvaloniaApplication.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/AvaloniaApplication.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/AvaloniaApplication.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/AvaloniaApplication.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/AvaloniaApplication.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/AvaloniaApplication.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/AvaloniaApplication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/AvaloniaApplication.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/AvaloniaApplication.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/AvaloniaApplication.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/apphost.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/ref/AvaloniaApplication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/ref/AvaloniaApplication.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/refint/Avalonia/AvaloniaApplication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/refint/Avalonia/AvaloniaApplication.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/refint/AvaloniaApplication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/refint/AvaloniaApplication.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +82,7 @@
       <option name="presentableId" value="Default" />
       <updated>1734902247380</updated>
       <workItem from="1734902248563" duration="6744000" />
-      <workItem from="1734947751439" duration="6295000" />
+      <workItem from="1734947751439" duration="6530000" />
     </task>
     <servers />
   </component>
