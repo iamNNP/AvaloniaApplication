@@ -9,7 +9,21 @@
   <component name="ChangeListManager">
     <list default="true" id="8520fa7d-d596-42ec-a2cf-f01c76ae8cd0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AvaloniaApplication/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AvaloniaApplication/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication.sln.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AvaloniaApplication/CustomControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/CustomControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.exe" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/Avalonia/AvaloniaApplication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/Avalonia/AvaloniaApplication.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/Avalonia/AvaloniaApplication.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/Avalonia/AvaloniaApplication.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/AvaloniaApplication.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/AvaloniaApplication.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/AvaloniaApplication.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/AvaloniaApplication.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/AvaloniaApplication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/AvaloniaApplication.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/AvaloniaApplication.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/AvaloniaApplication.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/ref/AvaloniaApplication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/ref/AvaloniaApplication.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/refint/Avalonia/AvaloniaApplication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/refint/Avalonia/AvaloniaApplication.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/refint/AvaloniaApplication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/refint/AvaloniaApplication.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +37,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/22d92db124764b1ab49745245c66f01b1e1a00/31/09f25d35/Visual.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/243a037ca7a04510a506adfdd94befbac90930/a1/46b6da2f/Void.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AvaloniaApplication/ViewLocator.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -39,20 +54,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Project.AvaloniaApplication.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Project.AvaloniaApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="AvaloniaApplication" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -82,7 +97,8 @@
       <option name="presentableId" value="Default" />
       <updated>1734902247380</updated>
       <workItem from="1734902248563" duration="6744000" />
-      <workItem from="1734947751439" duration="6530000" />
+      <workItem from="1734947751439" duration="6652000" />
+      <workItem from="1737368478179" duration="4245000" />
     </task>
     <servers />
   </component>

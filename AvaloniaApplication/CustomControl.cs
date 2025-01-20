@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Media;
+using Avalonia.Platform;
 using AvaloniaApplication.Models;
 
 namespace AvaloniaApplication;
@@ -16,6 +18,8 @@ public class CustomControl : UserControl
         new Triangle(300, 100),
     ];
     private int _pX, _pY;
+    private static Brush _lineBrush = new SolidColorBrush(Colors.Green);
+    private static Pen _pen = new(_lineBrush, 2, lineCap: PenLineCap.Square);
 
     public override void Render(DrawingContext context)
     {
@@ -23,8 +27,40 @@ public class CustomControl : UserControl
         {
             shape.Draw(context);
         }
-
         Console.WriteLine("Drawing");
+        int x1, y1, x2, y2;
+        double k, b;
+        bool upper, lower;
+        for (int i = 0; i < _shapes.Count() - 1; i++)
+        {
+            for (int j = i + 1; j < _shapes.Count(); j++)
+            {
+                upper = true;
+                lower = true;
+                x1 = _shapes[i].X;
+                x2 = _shapes[i].X;
+                y1 = _shapes[i].Y;
+                y2 = _shapes[i].Y;
+                k = (double)(y2 - y1) / (x2 - x1);
+                b = y1 - k * x1;
+                for (int t = 0; t < _shapes.Count(); t++)
+                {
+                    if (_shapes[t].Y > k * _shapes[t].X + b)
+                    {
+                        lower = false;
+                    } 
+                    else if (_shapes[t].Y < k * _shapes[t].X + b)
+                    {
+                        upper = false;
+                    }
+                }
+        
+                // if (!(lower == false && upper == false))
+                // {
+                context.DrawLine(_pen, new Point(x1, y1), new Point(x2, y2));
+                // }
+            }
+        }
     }
 
     public void Click(int x0, int y0)
@@ -76,11 +112,6 @@ public class CustomControl : UserControl
     
     public void Delete(int x0, int y0)
     {
-        // foreach (var shape in _shapes.Where(shape => shape.IsInside(x0, y0)).ToList())
-        // {
-        //     _shapes.Remove(shape);
-        // }
-
         for (int i = _shapes.Count() - 1; i >= 0; i--)
         {
             if (_shapes[i].IsInside(x0, y0))
