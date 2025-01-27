@@ -38,27 +38,31 @@ public class CustomControl : UserControl
                 upper = true;
                 lower = true;
                 x1 = _shapes[i].X;
-                x2 = _shapes[i].X;
                 y1 = _shapes[i].Y;
-                y2 = _shapes[i].Y;
+                x2 = _shapes[j].X;
+                y2 = _shapes[j].Y;
+                Console.WriteLine($"i: {x1} {y1} j: {x2} {y2}");
                 k = (double)(y2 - y1) / (x2 - x1);
                 b = y1 - k * x1;
                 for (int t = 0; t < _shapes.Count(); t++)
                 {
-                    if (_shapes[t].Y > k * _shapes[t].X + b)
+                    if (t != i && t != j)
                     {
-                        lower = false;
-                    } 
-                    else if (_shapes[t].Y < k * _shapes[t].X + b)
-                    {
-                        upper = false;
+                        if (_shapes[t].Y > k * _shapes[t].X + b)
+                        {
+                            lower = false;
+                        }
+                        else if (_shapes[t].Y < k * _shapes[t].X + b)
+                        {
+                            upper = false;
+                        }
                     }
                 }
-        
-                // if (!(lower == false && upper == false))
-                // {
-                context.DrawLine(_pen, new Point(x1, y1), new Point(x2, y2));
-                // }
+                
+                if (!(lower == false && upper == false))
+                {
+                    context.DrawLine(_pen, new Point(x1, y1), new Point(x2, y2));
+                }
             }
         }
     }
@@ -77,7 +81,6 @@ public class CustomControl : UserControl
         }
         _pX = x0;
         _pY = y0;
-
         InvalidateVisual();
     }
 

@@ -9,7 +9,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8520fa7d-d596-42ec-a2cf-f01c76ae8cd0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AvaloniaApplication/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AvaloniaApplication/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AvaloniaApplication.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication.sln.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AvaloniaApplication/CustomControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/CustomControl.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.exe" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.exe" afterDir="false" />
@@ -99,6 +98,8 @@
       <workItem from="1734902248563" duration="6744000" />
       <workItem from="1734947751439" duration="6652000" />
       <workItem from="1737368478179" duration="4245000" />
+      <workItem from="1737373458766" duration="48000" />
+      <workItem from="1737973313724" duration="4318000" />
     </task>
     <servers />
   </component>
