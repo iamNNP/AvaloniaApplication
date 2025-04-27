@@ -9,7 +9,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8520fa7d-d596-42ec-a2cf-f01c76ae8cd0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AvaloniaApplication/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AvaloniaApplication/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication.sln.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AvaloniaApplication/CustomControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/CustomControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/Models/Shape.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/Models/Shape.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.exe" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.pdb" afterDir="false" />
@@ -38,7 +40,10 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/22d92db124764b1ab49745245c66f01b1e1a00/31/09f25d35/Visual.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/243a037ca7a04510a506adfdd94befbac90930/a1/46b6da2f/Void.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2af0134e7ab9169f6d3ec32e105e8d59b120c335d94b12c532896058ca5fd5/Visual.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AvaloniaApplication/ViewLocator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AvaloniaApplication/ViewModels/MainWindowViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AvaloniaApplication/ViewModels/ViewModelBase.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -99,7 +104,18 @@
       <workItem from="1734947751439" duration="6652000" />
       <workItem from="1737368478179" duration="4245000" />
       <workItem from="1737373458766" duration="48000" />
-      <workItem from="1737973313724" duration="4318000" />
+      <workItem from="1737973313724" duration="4418000" />
+      <workItem from="1739173041695" duration="3825000" />
+      <workItem from="1739181261766" duration="7711000" />
+      <workItem from="1739199936016" duration="1790000" />
+      <workItem from="1739294621932" duration="2158000" />
+      <workItem from="1740980087934" duration="2586000" />
+      <workItem from="1741000572283" duration="1458000" />
+      <workItem from="1741600380361" duration="2712000" />
+      <workItem from="1742194435764" duration="5444000" />
+      <workItem from="1742813506566" duration="221000" />
+      <workItem from="1742813793778" duration="2255000" />
+      <workItem from="1745762935769" duration="5805000" />
     </task>
     <servers />
   </component>

@@ -9,6 +9,7 @@ public abstract class Shape
     protected static Color color;
 
     public bool IsMoving { get; set; }
+    public bool InConvexHullChain { get; set; }
 
     public abstract bool IsInside(int nx, int ny);
 
