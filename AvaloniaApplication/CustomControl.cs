@@ -18,8 +18,10 @@ public class CustomControl : UserControl
         // new Triangle(300, 100),
     ];
     private int _pX, _pY;
-    private static Brush _lineBrush = new SolidColorBrush(Colors.Green);
-    private static Pen _pen = new(_lineBrush, 2, lineCap: PenLineCap.Square);
+    private string _shape = "circle";
+    private static Color _color = Colors.Green;
+    private static Brush _lineBrush = new SolidColorBrush(_color);
+    private static Pen _pen = new(_lineBrush, 3, lineCap: PenLineCap.Square);
 
     public bool IsNotInConvexHullChain(Shape shape)
     {
@@ -152,6 +154,15 @@ public class CustomControl : UserControl
         {
             Console.WriteLine("Drawing new shape");
             Shape lShape = new Circle(x0, y0);
+            if (_shape == "square")
+            {
+                lShape = new Square(x0, y0);
+            }
+
+            if (_shape == "triangle")
+            {
+                lShape = new Triangle(x0, y0);
+            }
             _shapes.Add(lShape);
             DrawConvexHullFast(null);
             // DrawConvexHullSlow(null);
@@ -231,5 +242,17 @@ public class CustomControl : UserControl
             }   
         }
         InvalidateVisual();
+    }
+
+    public void SetCurrentShapeType(string shape)
+    {
+        _shape = shape;
+    }
+
+    public void SetCurrentColor(Color color)
+    {
+        _color = color;
+        _lineBrush = new SolidColorBrush(_color);
+        _pen = new(_lineBrush, 3, lineCap: PenLineCap.Square);
     }
 }

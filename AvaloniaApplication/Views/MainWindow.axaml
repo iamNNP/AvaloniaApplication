@@ -18,6 +18,20 @@
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainWindowViewModel/>
     </Design.DataContext>
-
-    <AvaloniaApplication:CustomControl Name="MyCustomControl"></AvaloniaApplication:CustomControl>
+    
+    <AvaloniaApplication:CustomControl Name="MyCustomControl">
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="Shape">
+                    <MenuItem Header="Circle" Tag="circle" Click="OnSelectShape"/>
+                    <Separator/>
+                    <MenuItem Header="Square" Tag="square" Click="OnSelectShape"/>
+                    <Separator/>
+                    <MenuItem Header="Triangle" Tag="triangle" Click="OnSelectShape"/>
+                    <Separator/>
+                </MenuItem>
+            </Menu>
+            <TextBlock/>
+        </DockPanel>
+    </AvaloniaApplication:CustomControl>
 </Window>

@@ -36,4 +36,14 @@ public partial class MainWindow : Window
         CustomControl? customControl = this.Find<CustomControl>("MyCustomControl");
         customControl?.Release((int)e.GetPosition(customControl).X, (int)e.GetPosition(customControl).Y);
     }
+    
+    private void OnSelectShape(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        var customControl = this.Find<CustomControl>("MyCustomControl");
+        if (sender is MenuItem menuItem)
+        {
+            string shape = menuItem.Tag as string;
+            customControl?.SetCurrentShapeType(shape);
+        }
+    }
 }
