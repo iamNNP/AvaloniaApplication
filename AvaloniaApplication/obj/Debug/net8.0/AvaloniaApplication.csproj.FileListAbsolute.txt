@@ -60,10 +60,10 @@ C:\Users\Александр\RiderProjects\AvaloniaApplication\AvaloniaApplicatio
 C:\Users\Александр\RiderProjects\AvaloniaApplication\AvaloniaApplication\obj\Debug\net8.0\AvaloniaApplication.AssemblyInfoInputs.cache
 C:\Users\Александр\RiderProjects\AvaloniaApplication\AvaloniaApplication\obj\Debug\net8.0\AvaloniaApplication.AssemblyInfo.cs
 C:\Users\Александр\RiderProjects\AvaloniaApplication\AvaloniaApplication\obj\Debug\net8.0\AvaloniaApplication.csproj.CoreCompileInputs.cache
+C:\Users\Александр\RiderProjects\AvaloniaApplication\AvaloniaApplication\obj\Debug\net8.0\AvaloniaApplication.sourcelink.json
 C:\Users\Александр\RiderProjects\AvaloniaApplication\AvaloniaApplication\obj\Debug\net8.0\Avalonia\AvaloniaApplication.dll
 C:\Users\Александр\RiderProjects\AvaloniaApplication\AvaloniaApplication\obj\Debug\net8.0\Avalonia\AvaloniaApplication.pdb
 C:\Users\Александр\RiderProjects\AvaloniaApplication\AvaloniaApplication\obj\Debug\net8.0\refint\Avalonia\AvaloniaApplication.dll
 C:\Users\Александр\RiderProjects\AvaloniaApplication\AvaloniaApplication\obj\Debug\net8.0\Avalonia.358D655D.Up2Date
 C:\Users\Александр\RiderProjects\AvaloniaApplication\AvaloniaApplication\obj\Debug\net8.0\AvaloniaApplication.genruntimeconfig.cache
 C:\Users\Александр\RiderProjects\AvaloniaApplication\AvaloniaApplication\obj\Debug\net8.0\ref\AvaloniaApplication.dll
-C:\Users\Александр\RiderProjects\AvaloniaApplication\AvaloniaApplication\obj\Debug\net8.0\AvaloniaApplication.sourcelink.json

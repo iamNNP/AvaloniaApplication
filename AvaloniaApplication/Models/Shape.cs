@@ -6,22 +6,22 @@ public abstract class Shape
 {
     protected int x, y;
     protected static int r;
-    protected static Color color;
+    protected Color color;
 
     public bool IsMoving { get; set; }
     public bool InConvexHullChain { get; set; }
 
     public abstract bool IsInside(int nx, int ny);
 
-    protected Shape(int x, int y)
+    protected Shape(int x, int y, Color color)
     {
         this.x = x;
         this.y = y;
+        this.color = color;
     }
 
     static Shape()
     {
-        color = Colors.Green;
         r = 35;
     }
 

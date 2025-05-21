@@ -1,6 +1,8 @@
 using System;
 using Avalonia.Controls;
 using Avalonia.Input;
+using Avalonia.Media;
+using Avalonia.Interactivity;
 
 namespace AvaloniaApplication.Views;
 
@@ -46,4 +48,15 @@ public partial class MainWindow : Window
             customControl?.SetCurrentShapeType(shape);
         }
     }
+    
+    // private void OnColorChanged(object? sender, ColorChangedEventArgs  e)
+    // {
+    //     var colorPicker = sender as ColorPicker;
+    //     if (colorPicker != null)
+    //     {
+    //         var selectedColor = colorPicker.Color;
+    //         var customControl = this.Find<CustomControl>("MyCustomControl");
+    //         customControl?.SetCurrentColor(selectedColor);
+    //     }
+    // }
 }

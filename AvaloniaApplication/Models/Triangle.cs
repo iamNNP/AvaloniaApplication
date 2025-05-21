@@ -8,7 +8,7 @@ public class Triangle : Shape
 {
     private Point A, B, C;
     private static double Area = r * r * 0.25 * 3 * Math.Sqrt(3);
-    public Triangle(int x, int y) : base(x, y)
+    public Triangle(int x, int y, Color color) : base(x, y, color)
     {
     }
 
