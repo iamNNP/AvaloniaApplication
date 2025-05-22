@@ -8,9 +8,19 @@ public class Square : Shape
 {
     private Point A, B, C, D;
     private float r1;
+
     public Square(int x, int y, Color color, int r) : base(x, y, color, r)
     {
         r1 = r / (float)Math.Sqrt(2);
+    }
+
+    public override int R
+    {
+        set
+        {
+            this.r = value;
+            this.r1 = value / (float)Math.Sqrt(2); 
+        }
     }
 
     public override bool IsInside(int x0, int y0)
@@ -22,7 +32,6 @@ public class Square : Shape
     {
         Brush lineBrush = new SolidColorBrush(color);
         Pen pen = new(lineBrush, 2, lineCap: PenLineCap.Square);
-
         A = new Point(x - r1, y + r1);
         B = new Point(x + r1, y + r1);
         C = new Point(x + r1, y - r1);

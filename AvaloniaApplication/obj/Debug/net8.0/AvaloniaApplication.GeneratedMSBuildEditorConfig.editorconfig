@@ -22,6 +22,9 @@ build_property.EnableGeneratedComInterfaceComImportInterop =
 [C:/Users/Александр/RiderProjects/AvaloniaApplication/AvaloniaApplication/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/Александр/RiderProjects/AvaloniaApplication/AvaloniaApplication/Views/ComparisonWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/Александр/RiderProjects/AvaloniaApplication/AvaloniaApplication/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

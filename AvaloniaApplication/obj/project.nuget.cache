@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "JNS2rRIQ9cc=",
+  "dgSpecHash": "awX7YPev1qE=",
   "success": true,
   "projectFilePath": "C:\\Users\\Александр\\RiderProjects\\AvaloniaApplication\\AvaloniaApplication\\AvaloniaApplication.csproj",
   "expectedPackageFiles": [
@@ -22,6 +22,7 @@
     "C:\\Users\\Александр\\.nuget\\packages\\avalonia.x11\\11.2.1\\avalonia.x11.11.2.1.nupkg.sha512",
     "C:\\Users\\Александр\\.nuget\\packages\\avalonia.xaml.interactivity\\11.0.5\\avalonia.xaml.interactivity.11.0.5.nupkg.sha512",
     "C:\\Users\\Александр\\.nuget\\packages\\communitytoolkit.mvvm\\8.2.1\\communitytoolkit.mvvm.8.2.1.nupkg.sha512",
+    "C:\\Users\\Александр\\.nuget\\packages\\dynamicdata\\9.1.2\\dynamicdata.9.1.2.nupkg.sha512",
     "C:\\Users\\Александр\\.nuget\\packages\\harfbuzzsharp\\7.3.0.2\\harfbuzzsharp.7.3.0.2.nupkg.sha512",
     "C:\\Users\\Александр\\.nuget\\packages\\harfbuzzsharp.nativeassets.linux\\7.3.0.2\\harfbuzzsharp.nativeassets.linux.7.3.0.2.nupkg.sha512",
     "C:\\Users\\Александр\\.nuget\\packages\\harfbuzzsharp.nativeassets.macos\\7.3.0.2\\harfbuzzsharp.nativeassets.macos.7.3.0.2.nupkg.sha512",
@@ -30,12 +31,18 @@
     "C:\\Users\\Александр\\.nuget\\packages\\microcom.runtime\\0.11.0\\microcom.runtime.0.11.0.nupkg.sha512",
     "C:\\Users\\Александр\\.nuget\\packages\\pixieditor.colorpicker.avaloniaui\\1.0.7\\pixieditor.colorpicker.avaloniaui.1.0.7.nupkg.sha512",
     "C:\\Users\\Александр\\.nuget\\packages\\pixieditor.colorpicker.models\\1.0.7\\pixieditor.colorpicker.models.1.0.7.nupkg.sha512",
+    "C:\\Users\\Александр\\.nuget\\packages\\reactiveui\\20.2.45\\reactiveui.20.2.45.nupkg.sha512",
     "C:\\Users\\Александр\\.nuget\\packages\\skiasharp\\2.88.8\\skiasharp.2.88.8.nupkg.sha512",
     "C:\\Users\\Александр\\.nuget\\packages\\skiasharp.nativeassets.linux\\2.88.8\\skiasharp.nativeassets.linux.2.88.8.nupkg.sha512",
     "C:\\Users\\Александр\\.nuget\\packages\\skiasharp.nativeassets.macos\\2.88.8\\skiasharp.nativeassets.macos.2.88.8.nupkg.sha512",
     "C:\\Users\\Александр\\.nuget\\packages\\skiasharp.nativeassets.webassembly\\2.88.8\\skiasharp.nativeassets.webassembly.2.88.8.nupkg.sha512",
     "C:\\Users\\Александр\\.nuget\\packages\\skiasharp.nativeassets.win32\\2.88.8\\skiasharp.nativeassets.win32.2.88.8.nupkg.sha512",
-    "C:\\Users\\Александр\\.nuget\\packages\\system.io.pipelines\\8.0.0\\system.io.pipelines.8.0.0.nupkg.sha512",
+    "C:\\Users\\Александр\\.nuget\\packages\\splat\\15.3.1\\splat.15.3.1.nupkg.sha512",
+    "C:\\Users\\Александр\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
+    "C:\\Users\\Александр\\.nuget\\packages\\system.io.pipelines\\9.0.2\\system.io.pipelines.9.0.2.nupkg.sha512",
+    "C:\\Users\\Александр\\.nuget\\packages\\system.reactive\\6.0.1\\system.reactive.6.0.1.nupkg.sha512",
+    "C:\\Users\\Александр\\.nuget\\packages\\system.text.encodings.web\\9.0.2\\system.text.encodings.web.9.0.2.nupkg.sha512",
+    "C:\\Users\\Александр\\.nuget\\packages\\system.text.json\\9.0.2\\system.text.json.9.0.2.nupkg.sha512",
     "C:\\Users\\Александр\\.nuget\\packages\\tmds.dbus.protocol\\0.20.0\\tmds.dbus.protocol.0.20.0.nupkg.sha512"
   ],
   "logs": []

@@ -9,21 +9,19 @@
   <component name="ChangeListManager">
     <list default="true" id="8520fa7d-d596-42ec-a2cf-f01c76ae8cd0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AvaloniaApplication/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AvaloniaApplication/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/App.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/App.axaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AvaloniaApplication/AvaloniaApplication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/AvaloniaApplication.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AvaloniaApplication/CustomControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/CustomControl.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AvaloniaApplication/Models/Circle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/Models/Circle.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AvaloniaApplication/Models/Shape.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/Models/Shape.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AvaloniaApplication/Models/Square.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/Models/Square.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AvaloniaApplication/Models/Triangle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/Models/Triangle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/Views/MainWindow.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/Views/MainWindow.axaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/Views/MainWindow.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/Views/MainWindow.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/RadiusEventArgs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/RadiusEventArgs.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.exe" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/AvaloniaApplication.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/System.IO.Pipelines.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/bin/Debug/net8.0/System.IO.Pipelines.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/AvaloniaApplication.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/AvaloniaApplication.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/AvaloniaApplication.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/AvaloniaApplication.csproj.nuget.g.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/AvaloniaApplication.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/AvaloniaApplication.csproj.nuget.g.targets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/Avalonia/AvaloniaApplication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/Avalonia/AvaloniaApplication.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/Avalonia/AvaloniaApplication.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/AvaloniaApplication/obj/Debug/net8.0/Avalonia/AvaloniaApplication.pdb" afterDir="false" />
@@ -141,6 +139,9 @@
       <workItem from="1745852098185" duration="5119000" />
       <workItem from="1747810895991" duration="1574000" />
       <workItem from="1747837616143" duration="20120000" />
+      <workItem from="1747876203861" duration="3188000" />
+      <workItem from="1747898337688" duration="1923000" />
+      <workItem from="1747900296557" duration="930000" />
     </task>
     <servers />
   </component>

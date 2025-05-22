@@ -21,5 +21,4 @@ public class Circle : Shape
         Pen pen = new(lineBrush, 2, lineCap: PenLineCap.Square);
         context.DrawEllipse(brush, pen, new Point(x, y), r, r);
     }
-    
 }

@@ -13,6 +13,15 @@ public class Triangle : Shape
         Area = r * r * 0.25 * 3 * Math.Sqrt(3);
     }
 
+    public override int R
+    {
+        set
+        {
+            this.r = value; 
+            this.Area = value * value * 0.25 * 3 * Math.Sqrt(3); 
+        }
+    }
+
     public override bool IsInside(int x0, int y0)
     {
         Point M = new Point(x0, y0);

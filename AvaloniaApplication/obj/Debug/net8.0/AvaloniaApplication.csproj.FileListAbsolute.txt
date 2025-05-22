@@ -70,3 +70,10 @@ C:\Users\Александр\RiderProjects\AvaloniaApplication\AvaloniaApplicatio
 C:\Users\Александр\RiderProjects\AvaloniaApplication\AvaloniaApplication\obj\Debug\net8.0\Avalonia.358D655D.Up2Date
 C:\Users\Александр\RiderProjects\AvaloniaApplication\AvaloniaApplication\obj\Debug\net8.0\AvaloniaApplication.genruntimeconfig.cache
 C:\Users\Александр\RiderProjects\AvaloniaApplication\AvaloniaApplication\obj\Debug\net8.0\ref\AvaloniaApplication.dll
+C:\Users\Александр\RiderProjects\AvaloniaApplication\AvaloniaApplication\bin\Debug\net8.0\DynamicData.dll
+C:\Users\Александр\RiderProjects\AvaloniaApplication\AvaloniaApplication\bin\Debug\net8.0\ReactiveUI.dll
+C:\Users\Александр\RiderProjects\AvaloniaApplication\AvaloniaApplication\bin\Debug\net8.0\Splat.dll
+C:\Users\Александр\RiderProjects\AvaloniaApplication\AvaloniaApplication\bin\Debug\net8.0\System.Reactive.dll
+C:\Users\Александр\RiderProjects\AvaloniaApplication\AvaloniaApplication\bin\Debug\net8.0\System.Text.Encodings.Web.dll
+C:\Users\Александр\RiderProjects\AvaloniaApplication\AvaloniaApplication\bin\Debug\net8.0\System.Text.Json.dll
+C:\Users\Александр\RiderProjects\AvaloniaApplication\AvaloniaApplication\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll

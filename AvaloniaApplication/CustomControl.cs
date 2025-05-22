@@ -267,16 +267,46 @@ public class CustomControl : UserControl
         _pen = new(_lineBrush, 3, lineCap: PenLineCap.Square);
     }
 
-    public void ShowComparison(int customContolWidth, int customControlHeight)
+    public void ShowComparison(int customControlWidth, int customControlHeight)
     {
-        _shapes.Clear();
-        int x = 0;
-        int y = 0;
-        for (int i = 0; i < 1000; i++)
+        var measurements = new List<(int Shapes, long FastTime, long SlowTime)>();
+        var random = new Random();
+
+        for (int numShapes = 10; numShapes <= 1000; numShapes += 10)
         {
-            _shapes.Add(new Circle(x, y, _color, _radius));
+            _shapes.Clear();
+            for (int i = 0; i < numShapes; i++)
+            {
+                int x = random.Next(_radius, customControlWidth - _radius);
+                int y = random.Next(_radius, customControlHeight - _radius);
+                
+                int shapeType = random.Next(3);
+                Shape shape = shapeType switch
+                {
+                    0 => new Circle(x, y, _color, _radius),
+                    1 => new Square(x, y, _color, _radius),
+                    2 => new Triangle(x, y, _color, _radius),
+                    _ => new Circle(x, y, _color, _radius)
+                };
+                _shapes.Add(shape);
+            }
+
+            var fastStopwatch = System.Diagnostics.Stopwatch.StartNew();
+            DrawConvexHullFast(null);
+            fastStopwatch.Stop();
+            var fastTime = fastStopwatch.ElapsedMilliseconds;
+            
+            var slowStopwatch = System.Diagnostics.Stopwatch.StartNew();
+            DrawConvexHullSlow(null);
+            slowStopwatch.Stop();
+            var slowTime = slowStopwatch.ElapsedMilliseconds;
+
+            measurements.Add((numShapes, fastTime, slowTime));
         }
-        DrawConvexHullFast(null);
+
+        var comparisonWindow = new Views.ComparisonWindow(measurements);
+        comparisonWindow.Show();
+
         InvalidateVisual();
     }
 

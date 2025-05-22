@@ -25,6 +25,8 @@
         </PackageReference>
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
         <PackageReference Include="PixiEditor.ColorPicker.AvaloniaUI" Version="1.0.7" />
+        <PackageReference Include="ReactiveUI" Version="20.2.45" />
+        <PackageReference Include="System.Reactive" Version="6.0.1" />
     </ItemGroup>
 
     <ItemGroup>

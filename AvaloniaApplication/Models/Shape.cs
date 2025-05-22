@@ -39,7 +39,7 @@ public abstract class Shape
         set { this.color = value; }
     }
 
-    public int R
+    public virtual int R
     {
         get { return this.r; }
         set { this.r = value; }
