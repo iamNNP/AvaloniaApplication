@@ -5,7 +5,7 @@ namespace AvaloniaApplication.Models;
 
 public class Circle : Shape
 {
-    public Circle(int x, int y, Color color) : base(x, y, color)
+    public Circle(int x, int y, Color color, int r) : base(x, y, color, r)
     {
     }
 

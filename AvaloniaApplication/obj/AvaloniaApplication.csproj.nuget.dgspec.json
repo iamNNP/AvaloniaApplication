@@ -72,6 +72,10 @@
             "CommunityToolkit.Mvvm": {
               "target": "Package",
               "version": "[8.2.1, )"
+            },
+            "PixiEditor.ColorPicker.AvaloniaUI": {
+              "target": "Package",
+              "version": "[1.0.7, )"
             }
           },
           "imports": [

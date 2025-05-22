@@ -4,14 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:AvaloniaApplication="clr-namespace:AvaloniaApplication"
-        xmlns:cp="clr-namespace:Avalonia.Controls;assembly=Avalonia.Controls.ColorPicker"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="AvaloniaApplication.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
-        PointerPressed="OnPointerPressed"
-        PointerMoved="OnPointerMoved"
-        PointerReleased="OnPointerReleased"
         Title="AvaloniaApplication">
 
     <Design.DataContext>
@@ -20,9 +16,9 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
     
-    <AvaloniaApplication:CustomControl Name="MyCustomControl">
-        <DockPanel>
-            <Menu DockPanel.Dock="Top">
+    <Grid RowDefinitions="Auto,*">
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="10" Margin="10">
+            <Menu>
                 <MenuItem Header="Shape">
                     <MenuItem Header="Circle" Tag="circle" Click="OnSelectShape"/>
                     <Separator/>
@@ -31,9 +27,32 @@
                     <MenuItem Header="Triangle" Tag="triangle" Click="OnSelectShape"/>
                     <Separator/>
                 </MenuItem>
+                <MenuItem Header="File">
+                    <MenuItem Header="Save" Click="OnSaveClick"/>
+                    <Separator/>
+                    <MenuItem Header="Load" Click="OnLoadClick"/>
+                </MenuItem>
+                <MenuItem Header="Tools">
+                    <MenuItem Header="Radius Control" Click="OnRadiusControlClick"/>
+                </MenuItem>
             </Menu>
-            <TextBlock/>
-        </DockPanel>
+            
+            <ColorPicker Name="ShapeColorPicker"
+                Width="77"
+                Height="30"
+                Padding="5"
+                IsAlphaEnabled="False"
+                ColorChanged="OnColorChanged"/>
+            
+            <Button Click="OnShowComparison" Background="Transparent">Comparison</Button>
+        </StackPanel>
         
-    </AvaloniaApplication:CustomControl>
+        <Border Grid.Row="1"
+                Background="Transparent"
+                PointerPressed="OnPointerPressed"
+                PointerMoved="OnPointerMoved"
+                PointerReleased="OnPointerReleased">
+            <AvaloniaApplication:CustomControl Name="MyCustomControl" />
+        </Border>
+    </Grid>
 </Window>

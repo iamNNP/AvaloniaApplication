@@ -14,7 +14,8 @@
           "Avalonia.Diagnostics": "11.2.1",
           "Avalonia.Fonts.Inter": "11.2.1",
           "Avalonia.Themes.Fluent": "11.2.1",
-          "CommunityToolkit.Mvvm": "8.2.1"
+          "CommunityToolkit.Mvvm": "8.2.1",
+          "PixiEditor.ColorPicker.AvaloniaUI": "1.0.7"
         },
         "runtime": {
           "AvaloniaApplication.dll": {}
@@ -259,6 +260,17 @@
           }
         }
       },
+      "Avalonia.Xaml.Interactivity/11.0.5": {
+        "dependencies": {
+          "Avalonia": "11.2.8"
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.Xaml.Interactivity.dll": {
+            "assemblyVersion": "11.0.5.0",
+            "fileVersion": "11.0.5.0"
+          }
+        }
+      },
       "CommunityToolkit.Mvvm/8.2.1": {
         "runtime": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {
@@ -340,6 +352,27 @@
           "lib/net5.0/MicroCom.Runtime.dll": {
             "assemblyVersion": "0.11.0.0",
             "fileVersion": "0.11.0.0"
+          }
+        }
+      },
+      "PixiEditor.ColorPicker.AvaloniaUI/1.0.7": {
+        "dependencies": {
+          "Avalonia": "11.2.8",
+          "Avalonia.Xaml.Interactivity": "11.0.5",
+          "PixiEditor.ColorPicker.Models": "1.0.7"
+        },
+        "runtime": {
+          "lib/net8.0/ColorPicker.AvaloniaUI.dll": {
+            "assemblyVersion": "1.0.7.0",
+            "fileVersion": "1.0.7.0"
+          }
+        }
+      },
+      "PixiEditor.ColorPicker.Models/1.0.7": {
+        "runtime": {
+          "lib/net8.0/ColorPicker.Models.dll": {
+            "assemblyVersion": "1.0.7.0",
+            "fileVersion": "1.0.7.0"
           }
         }
       },
@@ -550,6 +583,13 @@
       "path": "avalonia.x11/11.2.1",
       "hashPath": "avalonia.x11.11.2.1.nupkg.sha512"
     },
+    "Avalonia.Xaml.Interactivity/11.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-B/1VU7v8u2tqOzee9SjICBSJfiIcuiQF8Ngqv80zKKNU38qQ++zFweAZ2q7qgCYaBvny8NakEfBnpMhroMdDmA==",
+      "path": "avalonia.xaml.interactivity/11.0.5",
+      "hashPath": "avalonia.xaml.interactivity.11.0.5.nupkg.sha512"
+    },
     "CommunityToolkit.Mvvm/8.2.1": {
       "type": "package",
       "serviceable": true,
@@ -598,6 +638,20 @@
       "sha512": "sha512-MEnrZ3UIiH40hjzMDsxrTyi8dtqB5ziv3iBeeU4bXsL/7NLSal9F1lZKpK+tfBRnUoDSdtcW3KufE4yhATOMCA==",
       "path": "microcom.runtime/0.11.0",
       "hashPath": "microcom.runtime.0.11.0.nupkg.sha512"
+    },
+    "PixiEditor.ColorPicker.AvaloniaUI/1.0.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2pUrO7gQUedeTdp6hvKE68dYDj8uOUu5cht3zuQFC9K9rYivJlnLSE7OhHVdXHyGJT3eHJ6ZHgF/ZHFnBZS9pg==",
+      "path": "pixieditor.colorpicker.avaloniaui/1.0.7",
+      "hashPath": "pixieditor.colorpicker.avaloniaui.1.0.7.nupkg.sha512"
+    },
+    "PixiEditor.ColorPicker.Models/1.0.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ogr9x2jX0QgGXC+/I54eLfZaG/uXtIKimo2aRqyBP3689Zgp0n9JZpxRcEFTQ2JTl46H9JUXhzHOLhfb5DLsUg==",
+      "path": "pixieditor.colorpicker.models/1.0.7",
+      "hashPath": "pixieditor.colorpicker.models.1.0.7.nupkg.sha512"
     },
     "SkiaSharp/2.88.8": {
       "type": "package",

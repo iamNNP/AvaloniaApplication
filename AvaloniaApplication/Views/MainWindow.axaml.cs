@@ -3,6 +3,11 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Media;
 using Avalonia.Interactivity;
+using Avalonia.VisualTree;
+using Avalonia.Platform.Storage;
+using static Avalonia.Visual;
+using ColorPicker.Models;
+using AvaloniaApplication.ViewModels;
 
 namespace AvaloniaApplication.Views;
 
@@ -15,48 +20,148 @@ public partial class MainWindow : Window
     
     private void OnPointerPressed(object sender, PointerPressedEventArgs e)
     {
-        CustomControl? customControl = this.Find<CustomControl>("MyCustomControl");
+        var customControl = this.Find<CustomControl>("MyCustomControl");
+        if (customControl == null) return;
+
         var point = e.GetCurrentPoint(this);
-        if (point.Properties.IsLeftButtonPressed)
+        
+        var controlPoint = e.GetPosition(customControl);
+        
+        if (controlPoint.X >= 0 && controlPoint.Y >= 0 && 
+            controlPoint.X <= customControl.Bounds.Width && 
+            controlPoint.Y <= customControl.Bounds.Height)
         {
-            customControl?.Click((int)e.GetPosition(customControl).X, (int)e.GetPosition(customControl).Y);
-        }
-        else
-        {
-            customControl?.Delete((int)e.GetPosition(customControl).X, (int)e.GetPosition(customControl).Y);
+            if (point.Properties.IsLeftButtonPressed)
+            {
+                customControl.Click((int)controlPoint.X, (int)controlPoint.Y);
+            }
+            else
+            {
+                customControl.Delete((int)controlPoint.X, (int)controlPoint.Y);
+            }
+            e.Handled = true;
         }
     }
 
     private void OnPointerMoved(object? sender, PointerEventArgs e)
     {
-        CustomControl? customControl = this.Find<CustomControl>("MyCustomControl");
-        customControl?.Move((int)e.GetPosition(customControl).X, (int)e.GetPosition(customControl).Y);
+        var customControl = this.Find<CustomControl>("MyCustomControl");
+        if (customControl == null) return;
+
+        var controlPoint = e.GetPosition(customControl);
+        
+        if (controlPoint.X >= 0 && controlPoint.Y >= 0 && 
+            controlPoint.X <= customControl.Bounds.Width && 
+            controlPoint.Y <= customControl.Bounds.Height)
+        {
+            customControl.Move((int)controlPoint.X, (int)controlPoint.Y);
+            e.Handled = true;
+        }
     }
 
     private void OnPointerReleased(object? sender, PointerReleasedEventArgs e)
     {
-        CustomControl? customControl = this.Find<CustomControl>("MyCustomControl");
-        customControl?.Release((int)e.GetPosition(customControl).X, (int)e.GetPosition(customControl).Y);
+        var customControl = this.Find<CustomControl>("MyCustomControl");
+        if (customControl == null) return;
+
+        var controlPoint = e.GetPosition(customControl);
+        
+        if (controlPoint.X >= 0 && controlPoint.Y >= 0 && 
+            controlPoint.X <= customControl.Bounds.Width && 
+            controlPoint.Y <= customControl.Bounds.Height)
+        {
+            customControl.Release((int)controlPoint.X, (int)controlPoint.Y);
+            e.Handled = true;
+        }
     }
     
     private void OnSelectShape(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
         var customControl = this.Find<CustomControl>("MyCustomControl");
-        if (sender is MenuItem menuItem)
+        if (sender is MenuItem menuItem && customControl != null && menuItem.Tag is string shape)
         {
-            string shape = menuItem.Tag as string;
-            customControl?.SetCurrentShapeType(shape);
+            customControl.SetCurrentShapeType(shape);
         }
     }
     
-    // private void OnColorChanged(object? sender, ColorChangedEventArgs  e)
-    // {
-    //     var colorPicker = sender as ColorPicker;
-    //     if (colorPicker != null)
-    //     {
-    //         var selectedColor = colorPicker.Color;
-    //         var customControl = this.Find<CustomControl>("MyCustomControl");
-    //         customControl?.SetCurrentColor(selectedColor);
-    //     }
-    // }
+    private void OnColorChanged(object? sender, ColorChangedEventArgs e)
+    {
+        var customControl = this.Find<CustomControl>("MyCustomControl");
+        if (customControl != null)
+        {
+            customControl.SetCurrentColor(e.NewColor);
+        }
+    }
+
+    private void OnShowComparison(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        var customControl = this.Find<CustomControl>("MyCustomControl");
+        if (sender is Button && customControl != null)
+        {
+            customControl.ShowComparison((int)customControl.Bounds.Width, (int)customControl.Bounds.Height);
+        }
+    }
+
+    private async void OnSaveClick(object sender, RoutedEventArgs e)
+    {
+        var storageProvider = StorageProvider;
+        var options = new FilePickerSaveOptions
+        {
+            DefaultExtension = "json",
+            SuggestedFileName = "shapes.json",
+            FileTypeChoices = new[]
+            {
+                new FilePickerFileType("JSON files")
+                {
+                    Patterns = new[] { "*.json" }
+                }
+            }
+        };
+
+        var file = await storageProvider.SaveFilePickerAsync(options);
+
+        if (file != null)
+        {
+            MyCustomControl.SaveToJson(file.Path.LocalPath);
+        }
+    }
+
+    private async void OnLoadClick(object sender, RoutedEventArgs e)
+    {
+        var storageProvider = StorageProvider;
+        var options = new FilePickerOpenOptions
+        {
+            AllowMultiple = false,
+            FileTypeFilter = new[]
+            {
+                new FilePickerFileType("JSON files")
+                {
+                    Patterns = new[] { "*.json" }
+                }
+            }
+        };
+
+        var files = await storageProvider.OpenFilePickerAsync(options);
+
+        if (files != null)
+        {
+            MyCustomControl.LoadFromJson(files[0].Path.LocalPath);
+        }
+    }
+
+    private void OnRadiusControlClick(object? sender, RoutedEventArgs e)
+    {
+        var radiusWindow = new RadiusWindow();
+        radiusWindow.RadiusChanged += OnRadiusChanged;
+        radiusWindow.Show();
+    }
+
+    private void OnRadiusChanged(object sender, RadiusEventArgs e)
+    {
+        var customControl = this.Find<CustomControl>("MyCustomControl");
+        if (customControl != null)
+        {
+            customControl.SetRadius(e.Radius);
+        }
+    }
 }

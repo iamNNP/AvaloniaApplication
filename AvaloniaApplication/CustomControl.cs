@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
+using System.IO;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Media;
@@ -19,15 +21,24 @@ public class CustomControl : UserControl
     ];
     private int _pX, _pY;
     private string _shape = "circle";
-    private Color _color = Colors.Yellow;
-    private static Brush _lineBrush = new SolidColorBrush(Colors.Green);
-    private static Pen _pen = new(_lineBrush, 3, lineCap: PenLineCap.Square);
+    private Color _color;
+    private Brush _lineBrush;
+    private Pen _pen;
+    private int _radius = 50;
+
+    public CustomControl()
+    {
+        _color = Colors.Yellow;
+        _lineBrush = new SolidColorBrush(_color);
+        _pen = new(_lineBrush, 3, lineCap: PenLineCap.Square);
+    }
 
     public bool IsNotInConvexHullChain(Shape shape)
     {
         return !shape.InConvexHullChain;
     }
-    public void DrawConvexHullSlow(DrawingContext context)
+    
+    public void DrawConvexHullSlow(DrawingContext? context)
     {
         foreach (var shape in _shapes)
         {
@@ -82,6 +93,7 @@ public class CustomControl : UserControl
             }
         }
     }
+    
     public static int Orientation(Shape p, Shape q, Shape r)
     {
         int val = (q.Y - p.Y) * (r.X - q.X) -
@@ -90,7 +102,8 @@ public class CustomControl : UserControl
         if (val == 0) return 0;
         return (val > 0)? 1: 2;
     }
-    public void DrawConvexHullFast(DrawingContext context)
+    
+    public void DrawConvexHullFast(DrawingContext? context)
     {
         foreach (var shape in _shapes)
         {
@@ -132,6 +145,7 @@ public class CustomControl : UserControl
             }
         }
     }
+    
     public override void Render(DrawingContext context)
     {
         foreach (var shape in _shapes)
@@ -153,19 +167,18 @@ public class CustomControl : UserControl
         if (_shapes.All(shape => !shape.IsInside(x0, y0)))
         {
             Console.WriteLine("Drawing new shape");
-            Shape lShape = new Circle(x0, y0, _color);
+            Shape lShape = new Circle(x0, y0, _color, _radius);
             if (_shape == "square")
             {
-                lShape = new Square(x0, y0, _color);
+                lShape = new Square(x0, y0, _color, _radius);
             }
 
             if (_shape == "triangle")
             {
-                lShape = new Triangle(x0, y0, _color);
+                lShape = new Triangle(x0, y0, _color, _radius);
             }
             _shapes.Add(lShape);
             DrawConvexHullFast(null);
-            // DrawConvexHullSlow(null);
             if (lShape.InConvexHullChain == false && _shapes.Count != 1)
             {
                 _shapes.Remove(lShape);
@@ -230,14 +243,12 @@ public class CustomControl : UserControl
         {
             Console.WriteLine("if1");
             Console.WriteLine("Drawing new shape");
-            Shape lShape = new Circle(x0, y0, _color);
+            Shape lShape = new Circle(x0, y0, _color, _radius);
             _shapes.Add(lShape);
             DrawConvexHullFast(null);
-            // DrawConvexHullSlow(null);
             Console.WriteLine(lShape.InConvexHullChain);
             if (lShape.InConvexHullChain == false)
             {
-                // Console.WriteLine("lol");
                 _shapes.Clear();
             }   
         }
@@ -252,5 +263,86 @@ public class CustomControl : UserControl
     public void SetCurrentColor(Color color)
     {
         _color = color;
+        _lineBrush = new SolidColorBrush(color);
+        _pen = new(_lineBrush, 3, lineCap: PenLineCap.Square);
+    }
+
+    public void ShowComparison(int customContolWidth, int customControlHeight)
+    {
+        _shapes.Clear();
+        int x = 0;
+        int y = 0;
+        for (int i = 0; i < 1000; i++)
+        {
+            _shapes.Add(new Circle(x, y, _color, _radius));
+        }
+        DrawConvexHullFast(null);
+        InvalidateVisual();
+    }
+
+    public void SaveToJson(string filePath)
+    {
+        var shapesData = _shapes.Select(shape => new
+        {
+            Type = shape.GetType().Name,
+            X = shape.X,
+            Y = shape.Y,
+            Color = shape.Color.ToString(),
+            Radius = shape.R
+        }).ToList();
+
+        var jsonString = JsonSerializer.Serialize(shapesData, new JsonSerializerOptions
+        {
+            WriteIndented = true
+        });
+        File.WriteAllText(filePath, jsonString);
+    }
+
+    public void LoadFromJson(string filePath)
+    {
+        if (!File.Exists(filePath)) return;
+
+        var jsonString = File.ReadAllText(filePath);
+        var shapesData = JsonSerializer.Deserialize<List<Dictionary<string, JsonElement>>>(jsonString);
+        
+        if (shapesData == null) return;
+        
+        _shapes.Clear();
+        foreach (var shapeData in shapesData)
+        {
+            var type = shapeData["Type"].GetString();
+            var x = shapeData["X"].GetInt32();
+            var y = shapeData["Y"].GetInt32();
+            var colorStr = shapeData["Color"].GetString();
+            if (_shapes.Count == 0)
+            {
+                _radius = shapeData.ContainsKey("Radius") ? shapeData["Radius"].GetInt32() : _radius;
+            }
+
+            if (!Color.TryParse(colorStr, out var color))
+            {
+                color = Colors.Yellow;
+            }
+
+            Shape shape = type switch
+            {
+                "Circle" => new Circle(x, y, color, _radius),
+                "Square" => new Square(x, y, color, _radius),
+                "Triangle" => new Triangle(x, y, color, _radius),
+                _ => new Circle(x, y, color, _radius)
+            };
+            _shapes.Add(shape);
+        }
+        InvalidateVisual();
+    }
+
+    public void SetRadius(int radius)
+    {
+        _radius = radius;
+        foreach (var shape in _shapes)
+        {
+            shape.R = radius;
+        }
+        InvalidateVisual();
     }
 }

@@ -7,9 +7,10 @@ namespace AvaloniaApplication.Models;
 public class Triangle : Shape
 {
     private Point A, B, C;
-    private static double Area = r * r * 0.25 * 3 * Math.Sqrt(3);
-    public Triangle(int x, int y, Color color) : base(x, y, color)
+    private double Area;
+    public Triangle(int x, int y, Color color, int r) : base(x, y, color, r)
     {
+        Area = r * r * 0.25 * 3 * Math.Sqrt(3);
     }
 
     public override bool IsInside(int x0, int y0)

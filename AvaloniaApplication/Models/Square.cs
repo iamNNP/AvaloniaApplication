@@ -7,9 +7,10 @@ namespace AvaloniaApplication.Models;
 public class Square : Shape
 {
     private Point A, B, C, D;
-    private static float r1 = r / (float)Math.Sqrt(2);
-    public Square(int x, int y, Color color) : base(x, y, color)
+    private float r1;
+    public Square(int x, int y, Color color, int r) : base(x, y, color, r)
     {
+        r1 = r / (float)Math.Sqrt(2);
     }
 
     public override bool IsInside(int x0, int y0)
