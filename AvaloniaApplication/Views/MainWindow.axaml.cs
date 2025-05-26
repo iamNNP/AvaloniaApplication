@@ -80,7 +80,7 @@ public partial class MainWindow : Window
         var customControl = this.Find<CustomControl>("MyCustomControl");
         if (sender is MenuItem menuItem && customControl != null && menuItem.Tag is string shape)
         {
-            customControl.SetCurrentShapeType(shape);
+            customControl.SetShapeType(shape);
         }
     }
     
@@ -89,7 +89,7 @@ public partial class MainWindow : Window
         var customControl = this.Find<CustomControl>("MyCustomControl");
         if (customControl != null)
         {
-            customControl.SetCurrentColor(e.NewColor);
+            customControl.SetColor(e.NewColor);
         }
     }
 
@@ -164,4 +164,14 @@ public partial class MainWindow : Window
             customControl.SetRadius(e.Radius);
         }
     }
+    
+    private void OnSelectAlgo(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        var customControl = this.Find<CustomControl>("MyCustomControl");
+        if (sender is MenuItem menuItem && customControl != null && menuItem.Tag is string algo)
+        {
+            customControl.SetAlgo(algo);
+        }
+    }
+
 }

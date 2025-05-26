@@ -25,6 +25,7 @@ public class CustomControl : UserControl
     private Brush _lineBrush;
     private Pen _pen;
     private int _radius = 50;
+    private string _algo = "Fast";
 
     public CustomControl()
     {
@@ -153,7 +154,14 @@ public class CustomControl : UserControl
             shape.Draw(context);
         }
         Console.WriteLine("Drawing");
-        DrawConvexHullFast(context);
+        if (_algo == "Fast")
+        {
+            DrawConvexHullFast(context);
+        }
+        else
+        {
+            DrawConvexHullSlow(context);
+        }
     }
 
     public void Click(int x0, int y0)
@@ -163,7 +171,7 @@ public class CustomControl : UserControl
             Console.WriteLine("Click");
             shape.IsMoving = true;
         }
-        
+
         if (_shapes.All(shape => !shape.IsInside(x0, y0)))
         {
             Console.WriteLine("Drawing new shape");
@@ -177,8 +185,16 @@ public class CustomControl : UserControl
             {
                 lShape = new Triangle(x0, y0, _color, _radius);
             }
+
             _shapes.Add(lShape);
-            DrawConvexHullFast(null);
+            if (_algo == "Fast")
+            {
+                DrawConvexHullFast(null);
+            }
+            else
+            {
+                DrawConvexHullSlow(null);
+            }
             if (lShape.InConvexHullChain == false && _shapes.Count != 1)
             {
                 _shapes.Remove(lShape);
@@ -245,7 +261,14 @@ public class CustomControl : UserControl
             Console.WriteLine("Drawing new shape");
             Shape lShape = new Circle(x0, y0, _color, _radius);
             _shapes.Add(lShape);
-            DrawConvexHullFast(null);
+            if (_algo == "Fast")
+            {
+                DrawConvexHullFast(null);
+            }
+            else
+            {
+                DrawConvexHullSlow(null);
+            }
             Console.WriteLine(lShape.InConvexHullChain);
             if (lShape.InConvexHullChain == false)
             {
@@ -255,12 +278,12 @@ public class CustomControl : UserControl
         InvalidateVisual();
     }
 
-    public void SetCurrentShapeType(string shape)
+    public void SetShapeType(string shape)
     {
         _shape = shape;
     }
 
-    public void SetCurrentColor(Color color)
+    public void SetColor(Color color)
     {
         _color = color;
         _lineBrush = new SolidColorBrush(color);
@@ -272,7 +295,7 @@ public class CustomControl : UserControl
         var measurements = new List<(int Shapes, long FastTime, long SlowTime)>();
         var random = new Random();
 
-        for (int numShapes = 10; numShapes <= 1000; numShapes += 10)
+        for (int numShapes = 10; numShapes <= 300; numShapes += 10)
         {
             _shapes.Clear();
             for (int i = 0; i < numShapes; i++)
@@ -306,8 +329,7 @@ public class CustomControl : UserControl
 
         var comparisonWindow = new Views.ComparisonWindow(measurements);
         comparisonWindow.Show();
-
-        InvalidateVisual();
+        _shapes.Clear();
     }
 
     public void SaveToJson(string filePath)
@@ -374,5 +396,10 @@ public class CustomControl : UserControl
             shape.R = radius;
         }
         InvalidateVisual();
+    }
+    
+    public void SetAlgo(string algo)
+    {
+        _algo = algo;
     }
 }

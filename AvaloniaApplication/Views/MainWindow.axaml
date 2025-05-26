@@ -27,6 +27,12 @@
                     <MenuItem Header="Triangle" Tag="triangle" Click="OnSelectShape"/>
                     <Separator/>
                 </MenuItem>
+                <MenuItem Header="Algorithm">
+                    <MenuItem Header="Fast" Tag="Fast" Click="OnSelectAlgo"/>
+                    <Separator/>
+                    <MenuItem Header="Slow" Tag="Slow" Click="OnSelectAlgo"/>
+                    <Separator/>
+                </MenuItem>
                 <MenuItem Header="File">
                     <MenuItem Header="Save" Click="OnSaveClick"/>
                     <Separator/>
