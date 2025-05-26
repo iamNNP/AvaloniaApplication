@@ -286,8 +286,13 @@ public class CustomControl : UserControl
     public void SetColor(Color color)
     {
         _color = color;
+        foreach (var _shape in _shapes)
+        {
+            _shape.Color = color;
+        }
         _lineBrush = new SolidColorBrush(color);
         _pen = new(_lineBrush, 3, lineCap: PenLineCap.Square);
+        InvalidateVisual();
     }
 
     public void ShowComparison(int customControlWidth, int customControlHeight)
@@ -297,7 +302,7 @@ public class CustomControl : UserControl
         var tempShapes = new List<Shape>(_shapes);
         _shapes.Clear();
 
-        for (int numShapes = 10; numShapes <= 300; numShapes += 10)
+        for (int numShapes = 10; numShapes <= 1000; numShapes += 10)
         {
             _shapes.Clear();
             for (int i = 0; i < numShapes; i++)
@@ -372,6 +377,8 @@ public class CustomControl : UserControl
             if (_shapes.Count == 0)
             {
                 _radius = shapeData.ContainsKey("Radius") ? shapeData["Radius"].GetInt32() : _radius;
+                Color.TryParse(shapeData["Color"].GetString(), out _color);
+                SetColor(_color);
             }
 
             if (!Color.TryParse(colorStr, out var color))
@@ -404,5 +411,11 @@ public class CustomControl : UserControl
     public void SetAlgo(string algo)
     {
         _algo = algo;
+    }
+    
+    public void Clear()
+    {
+        _shapes.Clear();
+        InvalidateVisual();
     }
 }

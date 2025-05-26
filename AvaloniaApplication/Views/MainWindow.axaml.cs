@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Media;
@@ -14,6 +15,7 @@ namespace AvaloniaApplication.Views;
 public partial class MainWindow : Window
 {
     private RadiusWindow? _radiusWindow;
+    private string? _currentFilePath;
 
     public MainWindow()
     {
@@ -104,7 +106,34 @@ public partial class MainWindow : Window
         }
     }
 
+    private void OnNewClick(object sender, RoutedEventArgs e)
+    {
+        var customControl = this.Find<CustomControl>("MyCustomControl");
+        if (customControl != null)
+        {
+            customControl.Clear();
+            _currentFilePath = null;
+        }
+    }
+
     private async void OnSaveClick(object sender, RoutedEventArgs e)
+    {
+        if (string.IsNullOrEmpty(_currentFilePath))
+        {
+            await SaveAsFile();
+        }
+        else
+        {
+            MyCustomControl.SaveToJson(_currentFilePath);
+        }
+    }
+
+    private async void OnSaveAsClick(object sender, RoutedEventArgs e)
+    {
+        await SaveAsFile();
+    }
+
+    private async Task SaveAsFile()
     {
         var storageProvider = StorageProvider;
         var options = new FilePickerSaveOptions
@@ -124,7 +153,8 @@ public partial class MainWindow : Window
 
         if (file != null)
         {
-            MyCustomControl.SaveToJson(file.Path.LocalPath);
+            _currentFilePath = file.Path.LocalPath;
+            MyCustomControl.SaveToJson(_currentFilePath);
         }
     }
 
@@ -145,9 +175,10 @@ public partial class MainWindow : Window
 
         var files = await storageProvider.OpenFilePickerAsync(options);
 
-        if (files != null)
+        if (files != null && files.Count > 0)
         {
-            MyCustomControl.LoadFromJson(files[0].Path.LocalPath);
+            _currentFilePath = files[0].Path.LocalPath;
+            MyCustomControl.LoadFromJson(_currentFilePath);
         }
     }
 

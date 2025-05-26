@@ -19,6 +19,14 @@
     <Grid RowDefinitions="Auto,*">
         <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="10" Margin="10">
             <Menu>
+                <MenuItem Header="File">
+                    <MenuItem Header="New" Click="OnNewClick"/>
+                    <Separator/>
+                    <MenuItem Header="Open..." Click="OnLoadClick"/>
+                    <Separator/>
+                    <MenuItem Header="Save" Click="OnSaveClick"/>
+                    <MenuItem Header="Save As..." Click="OnSaveAsClick"/>
+                </MenuItem>
                 <MenuItem Header="Shape">
                     <MenuItem Header="Circle" Tag="circle" Click="OnSelectShape"/>
                     <Separator/>
@@ -27,29 +35,24 @@
                     <MenuItem Header="Triangle" Tag="triangle" Click="OnSelectShape"/>
                     <Separator/>
                 </MenuItem>
+                <MenuItem Header="Tools">
+                    <MenuItem Header="Radius Control" Click="OnRadiusControlClick"/>
+                    <MenuItem Header="Change Color">
+                        <ColorPicker Name="ShapeColorPicker"
+                                     Width="77"
+                                     Height="30"
+                                     Padding="5"
+                                     IsAlphaEnabled="False"
+                                     ColorChanged="OnColorChanged"/>
+                    </MenuItem>
+                </MenuItem>
                 <MenuItem Header="Algorithm">
                     <MenuItem Header="Fast" Tag="Fast" Click="OnSelectAlgo"/>
                     <Separator/>
                     <MenuItem Header="Slow" Tag="Slow" Click="OnSelectAlgo"/>
                     <Separator/>
                 </MenuItem>
-                <MenuItem Header="File">
-                    <MenuItem Header="Save" Click="OnSaveClick"/>
-                    <Separator/>
-                    <MenuItem Header="Load" Click="OnLoadClick"/>
-                </MenuItem>
-                <MenuItem Header="Tools">
-                    <MenuItem Header="Radius Control" Click="OnRadiusControlClick"/>
-                </MenuItem>
             </Menu>
-            
-            <ColorPicker Name="ShapeColorPicker"
-                Width="77"
-                Height="30"
-                Padding="5"
-                IsAlphaEnabled="False"
-                ColorChanged="OnColorChanged"/>
-            
             <Button Click="OnShowComparison" Background="Transparent">Comparison</Button>
         </StackPanel>
         
