@@ -13,6 +13,8 @@ namespace AvaloniaApplication.Views;
 
 public partial class MainWindow : Window
 {
+    private RadiusWindow? _radiusWindow;
+
     public MainWindow()
     {
         InitializeComponent();
@@ -151,9 +153,19 @@ public partial class MainWindow : Window
 
     private void OnRadiusControlClick(object? sender, RoutedEventArgs e)
     {
-        var radiusWindow = new RadiusWindow();
-        radiusWindow.RadiusChanged += OnRadiusChanged;
-        radiusWindow.Show();
+        if (_radiusWindow == null || !_radiusWindow.IsVisible)
+        {
+            _radiusWindow?.Close();
+            _radiusWindow = new RadiusWindow();
+            _radiusWindow.Closed += (s, e) => _radiusWindow = null;
+            _radiusWindow.RadiusChanged += OnRadiusChanged;
+            _radiusWindow.Show();
+        }
+        else
+        {
+            _radiusWindow.Activate();
+            _radiusWindow.Focus();
+        }
     }
 
     private void OnRadiusChanged(object sender, RadiusEventArgs e)
