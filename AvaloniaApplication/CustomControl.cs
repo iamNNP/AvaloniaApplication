@@ -292,8 +292,10 @@ public class CustomControl : UserControl
 
     public void ShowComparison(int customControlWidth, int customControlHeight)
     {
-        var measurements = new List<(int Shapes, long FastTime, long SlowTime)>();
+        var measurements = new List<(int Shapes, long Time)>();
         var random = new Random();
+        var tempShapes = new List<Shape>(_shapes);
+        _shapes.Clear();
 
         for (int numShapes = 10; numShapes <= 300; numShapes += 10)
         {
@@ -314,22 +316,23 @@ public class CustomControl : UserControl
                 _shapes.Add(shape);
             }
 
-            var fastStopwatch = System.Diagnostics.Stopwatch.StartNew();
-            DrawConvexHullFast(null);
-            fastStopwatch.Stop();
-            var fastTime = fastStopwatch.ElapsedMilliseconds;
-            
-            var slowStopwatch = System.Diagnostics.Stopwatch.StartNew();
-            DrawConvexHullSlow(null);
-            slowStopwatch.Stop();
-            var slowTime = slowStopwatch.ElapsedMilliseconds;
-
-            measurements.Add((numShapes, fastTime, slowTime));
+            var stopwatch = System.Diagnostics.Stopwatch.StartNew();
+            if (_algo == "Fast")
+            {
+                DrawConvexHullFast(null);
+            }
+            else
+            {
+                DrawConvexHullSlow(null);
+            }
+            stopwatch.Stop();
+            measurements.Add((numShapes, stopwatch.ElapsedMilliseconds));
         }
 
-        var comparisonWindow = new Views.ComparisonWindow(measurements);
-        comparisonWindow.Show();
         _shapes.Clear();
+        _shapes.AddRange(tempShapes);
+        var comparisonWindow = new Views.ComparisonWindow(measurements, _algo);
+        comparisonWindow.Show();
     }
 
     public void SaveToJson(string filePath)

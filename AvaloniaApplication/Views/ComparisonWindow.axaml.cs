@@ -13,76 +13,108 @@ namespace AvaloniaApplication.Views;
 
 public partial class ComparisonWindow : Window
 {
-    private readonly List<(int Shapes, long FastTime, long SlowTime)> _measurements;
+    private readonly List<(int Shapes, long Time)> _measurements;
+    private readonly string _algorithmName;
     private const int GraphPadding = 30;
     private const int AxisThickness = 2;
     private const int PointRadius = 3;
 
-    public ComparisonWindow(List<(int Shapes, long FastTime, long SlowTime)> measurements)
+    public ComparisonWindow(List<(int Shapes, long Time)> measurements, string algorithmName)
     {
         InitializeComponent();
         _measurements = measurements;
+        _algorithmName = algorithmName;
         
-        this.WhenAnyValue(x => x.Bounds).Subscribe(_ => 
+        this.Opened += (s, e) => 
         {
-            if (ComparisonCanvas != null)
-            {
-                Dispatcher.UIThread.Post(DrawGraph);
-            }
-        });
+            DrawGraph();
+        };
+
+        this.SizeChanged += (s, e) =>
+        {
+            DrawGraph();
+        };
     }
 
     private void DrawGraph()
     {
-        if (ComparisonCanvas == null || ComparisonCanvas.Bounds.Width <= 0 || ComparisonCanvas.Bounds.Height <= 0 || _measurements.Count == 0)
+        if (ComparisonCanvas == null || _measurements == null || _measurements.Count == 0)
             return;
 
-        var canvas = ComparisonCanvas;
-        canvas.Children.Clear();
+        ComparisonCanvas.Children.Clear();
 
-        var bounds = canvas.Bounds;
+        var bounds = ComparisonCanvas.Bounds;
+        if (bounds.Width <= 0 || bounds.Height <= 0)
+            return;
+
         var maxShapes = _measurements.Max(m => m.Shapes);
-        var maxTime = Math.Max(_measurements.Max(m => m.FastTime), _measurements.Max(m => m.SlowTime));
-        
+        var maxTime = _measurements.Max(m => m.Time);
+        if (maxTime == 0) maxTime = 1; // Prevent division by zero
+
         var scaleX = (bounds.Width - 2 * GraphPadding) / maxShapes;
         var scaleY = (bounds.Height - 2 * GraphPadding) / maxTime;
 
-        // Draw axes
-        var axisLine = new Line
+        // Draw Y axis
+        var yAxisLine = new Line
         {
             StartPoint = new Point(GraphPadding, bounds.Height - GraphPadding),
             EndPoint = new Point(GraphPadding, GraphPadding),
             Stroke = Brushes.Black,
             StrokeThickness = AxisThickness
         };
-        canvas.Children.Add(axisLine);
+        ComparisonCanvas.Children.Add(yAxisLine);
 
-        axisLine = new Line
+        // Draw X axis
+        var xAxisLine = new Line
         {
             StartPoint = new Point(GraphPadding, bounds.Height - GraphPadding),
             EndPoint = new Point(bounds.Width - GraphPadding, bounds.Height - GraphPadding),
             Stroke = Brushes.Black,
             StrokeThickness = AxisThickness
         };
-        canvas.Children.Add(axisLine);
+        ComparisonCanvas.Children.Add(xAxisLine);
 
-        // Draw grid and labels
-        DrawGrid(canvas, bounds, maxShapes, maxTime, scaleX, scaleY);
+        DrawGrid(ComparisonCanvas, bounds, maxShapes, maxTime, scaleX, scaleY);
+        DrawDataLine(_measurements, ComparisonCanvas, scaleX, scaleY, bounds, Brushes.Blue);
 
-        // Draw data lines
-        DrawDataLine(_measurements.Select(m => (m.Shapes, m.FastTime)).ToList(), 
-            canvas, scaleX, scaleY, bounds, Brushes.Blue);
-        DrawDataLine(_measurements.Select(m => (m.Shapes, m.SlowTime)).ToList(), 
-            canvas, scaleX, scaleY, bounds, Brushes.Red);
+        // Draw title
+        var title = new TextBlock
+        {
+            Text = $"{_algorithmName} Algorithm Performance",
+            FontSize = 16,
+            FontWeight = FontWeight.Bold
+        };
+        Canvas.SetLeft(title, (bounds.Width - 200) / 2);
+        Canvas.SetTop(title, GraphPadding / 2);
+        ComparisonCanvas.Children.Add(title);
 
-        // Draw legend
-        DrawLegend(canvas, bounds);
+        // Draw axis labels
+        var xAxisLabel = new TextBlock
+        {
+            Text = "Number of Shapes",
+            FontSize = 12
+        };
+        Canvas.SetLeft(xAxisLabel, (bounds.Width - 100) / 2);
+        Canvas.SetTop(xAxisLabel, bounds.Height - GraphPadding + 25);
+        ComparisonCanvas.Children.Add(xAxisLabel);
+
+        var yAxisLabel = new TextBlock
+        {
+            Text = "Time (ms)",
+            FontSize = 12
+        };
+        var transform = new RotateTransform(-90);
+        yAxisLabel.RenderTransform = transform;
+        Canvas.SetLeft(yAxisLabel, GraphPadding - 25);
+        Canvas.SetTop(yAxisLabel, bounds.Height / 2);
+        ComparisonCanvas.Children.Add(yAxisLabel);
     }
 
     private void DrawGrid(Canvas canvas, Rect bounds, int maxShapes, long maxTime, double scaleX, double scaleY)
     {
-        // X-axis grid and labels
-        for (int i = 0; i <= maxShapes; i += maxShapes / 10)
+        // X axis labels and grid lines
+        int xStep = Math.Max(1, maxShapes / 10);
+        for (int i = 0; i <= maxShapes; i += xStep)
         {
             var x = GraphPadding + i * scaleX;
             
@@ -98,16 +130,16 @@ public partial class ComparisonWindow : Window
             var label = new TextBlock
             {
                 Text = i.ToString(),
-                FontSize = 12,
-                TextAlignment = TextAlignment.Center
+                FontSize = 12
             };
-            Canvas.SetLeft(label, x - label.Bounds.Width / 2);
+            Canvas.SetLeft(label, x - 15);
             Canvas.SetTop(label, bounds.Height - GraphPadding + 5);
             canvas.Children.Add(label);
         }
 
-        // Y-axis grid and labels
-        for (int i = 0; i <= maxTime; i += (int)(maxTime / 10))
+        // Y axis labels and grid lines
+        int yStep = Math.Max(1, (int)(maxTime / 10));
+        for (int i = 0; i <= maxTime; i += yStep)
         {
             var y = bounds.Height - (GraphPadding + i * scaleY);
             
@@ -122,12 +154,11 @@ public partial class ComparisonWindow : Window
 
             var label = new TextBlock
             {
-                Text = i.ToString(),
-                FontSize = 12,
-                TextAlignment = TextAlignment.Right
+                Text = i.ToString() + "ms",
+                FontSize = 12
             };
-            Canvas.SetLeft(label, GraphPadding - label.Bounds.Width - 5);
-            Canvas.SetTop(label, y - label.Bounds.Height / 2);
+            Canvas.SetLeft(label, 5);
+            Canvas.SetTop(label, y - 10);
             canvas.Children.Add(label);
         }
     }
@@ -167,52 +198,5 @@ public partial class ComparisonWindow : Window
 
             previousPoint = currentPoint;
         }
-    }
-
-    private void DrawLegend(Canvas canvas, Rect bounds)
-    {
-        var legendY = GraphPadding + 10;
-        var legendX = bounds.Width - GraphPadding - 150;
-
-        // Fast algorithm legend
-        var fastLine = new Line
-        {
-            StartPoint = new Point(legendX, legendY),
-            EndPoint = new Point(legendX + 30, legendY),
-            Stroke = Brushes.Blue,
-            StrokeThickness = 2
-        };
-        canvas.Children.Add(fastLine);
-
-        var fastLabel = new TextBlock
-        {
-            Text = "Fast Algorithm",
-            FontSize = 12,
-            Foreground = Brushes.Black
-        };
-        Canvas.SetLeft(fastLabel, legendX + 40);
-        Canvas.SetTop(fastLabel, legendY - fastLabel.Bounds.Height / 2);
-        canvas.Children.Add(fastLabel);
-
-        // Slow algorithm legend
-        legendY += 20;
-        var slowLine = new Line
-        {
-            StartPoint = new Point(legendX, legendY),
-            EndPoint = new Point(legendX + 30, legendY),
-            Stroke = Brushes.Red,
-            StrokeThickness = 2
-        };
-        canvas.Children.Add(slowLine);
-
-        var slowLabel = new TextBlock
-        {
-            Text = "Slow Algorithm",
-            FontSize = 12,
-            Foreground = Brushes.Black
-        };
-        Canvas.SetLeft(slowLabel, legendX + 40);
-        Canvas.SetTop(slowLabel, legendY - slowLabel.Bounds.Height / 2);
-        canvas.Children.Add(slowLabel);
     }
 } 
